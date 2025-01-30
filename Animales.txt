@@ -1,0 +1,15 @@
+Perro|Terrestre|Guau
+Gato|Terrestre|Miau
+Águila|Volador|Kiiii
+Delfín|Acuatico|Iiih
+León|Terrestre|Ruge
+Tigre|Terrestre|Grrr
+Búho|Volador|Uuu
+Ballena|Acuatico|Wooo
+Lobo|Terrestre|Auu
+Pato|Volador|Cuac
+Pingüino|Acuatico|Quack
+Cebra|Terrestre|Braa
+Águila|Volador|Kiii
+Gato|Terrestre|Miau
+Cangrejo|Acuatico|Crack
