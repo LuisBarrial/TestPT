@@ -14,6 +14,23 @@ Se debe implementar la creación de objetos de animales que tengan la funcionali
 > nombre|tipo|onomatopeya
 
 o utilizando el archivo animales.txt presente en el repositorio.
+```javascript
+Perro|Terrestre|Guau
+Gato|Terrestre|Miau
+Águila|Volador|Kiiii
+Delfín|Acuatico|Iiih
+León|Terrestre|Ruge
+Tigre|Terrestre|Grrr
+Búho|Volador|Uuu
+Ballena|Acuatico|Wooo
+Lobo|Terrestre|Auu
+Pato|Volador|Cuac
+Pingüino|Acuatico|Quack
+Cebra|Terrestre|Braa
+Águila|Volador|Kiii
+Gato|Terrestre|Miau
+Cangrejo|Acuatico|Crack
+```
 ## Pasos
 - Ejecuta el siguiente comando en la terminal dentro del proyecto: mvn clean install
 - Aparecerá una carpeta llamada Target
