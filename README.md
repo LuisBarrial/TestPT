@@ -20,4 +20,4 @@ o utilizando el archivo animales.txt presente en el repositorio.
 - Dentro de Target habrán 2 JAR (SNAPSHOP[DEFAULT] Y SNAPSHOP-jar-with-dependencies)
 - Ahora puedes Regresar a la ruta general del proyecto y Ejecutar el Runner.bat que ejecutara el proyecto utilizando como prioridad el archivo animales.txt
 - Otra opción tambien para probarlo por medio de los args es Eliminar el Animals.txt y Ejecutar el comando con el siguiente formato:
-> java -jar target/PruebaTecnica-1.0-SNAPSHOT-jar-with-dependencies.jar "gato|terrestre|miau" "pescao|Acuatico|psss" "..." "...."  
+> java -jar target/PruebaTecnica-1.0-SNAPSHOT-jar-with-dependencies.jar "gato|terrestre|miau" "pescao|Acuatico|psss" "nombre|tipo|onomatopeya" "..."
