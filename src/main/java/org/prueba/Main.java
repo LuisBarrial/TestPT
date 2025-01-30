@@ -19,13 +19,14 @@ public class Main {
         AnimalServicio animalService = context.getBean(AnimalServicio.class);
 
         String rutaArchivo = "./Animales.txt"; // Ruta del Archivo
-        boolean hayArchivo = animalService.LeerArchivo(rutaArchivo);
+        boolean hayArchivo = animalService.LeerArchivo(rutaArchivo, args.length);
         if(hayArchivo){
             new Scanner(System.in).nextLine();
             return;
         }
         if (args.length == 0) {
             System.out.println("Por favor, ingresa los datos de los animales en formato: nombre|tipo|onomatopeya");
+            new Scanner(System.in).nextLine();
             return;
         }
 
@@ -52,6 +53,6 @@ public class Main {
         }
         String resultado = animalService.agruparAnimalesPorTipo(animales);
         System.out.println(resultado);
-        new Scanner(System.in).nextLine(); // Espera a que el usuario presione Enter
+        new Scanner(System.in).nextLine(); 
     }
 }

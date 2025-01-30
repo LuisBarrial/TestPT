@@ -1,6 +1,7 @@
 package org.prueba.modelo.Tipo;
 
 import org.prueba.modelo.Animal;
+import org.prueba.modelo.TipoAnimal;
 
 public class Acuatico extends Animal {
     public Acuatico(String nombre, String onomatopeya) {
@@ -9,6 +10,6 @@ public class Acuatico extends Animal {
 
     @Override
     public String getTipo() {
-        return "Acuático";
+        return TipoAnimal.ACUATICO.name();
     }
 }

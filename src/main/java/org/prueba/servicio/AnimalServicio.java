@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class AnimalServicio {
@@ -15,13 +16,14 @@ public class AnimalServicio {
         return animales.stream()
                 .collect(Collectors.groupingBy(Animal::getTipo))
                 .entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
                 .map(entry -> entry.getKey() + ":\n" + entry.getValue().stream()
                         .map(x->x.getNombre()+" hace "+x.getOnomatopeya().trim())
                         .collect(Collectors.joining("\n")))
                 .collect(Collectors.joining("\n\n"));
     }
 
-    public boolean LeerArchivo(String ruta){
+    public boolean LeerArchivo(String ruta, int args){
         List<Animal> animales = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linea;
@@ -47,7 +49,11 @@ public class AnimalServicio {
             }
 
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
+            if(args==0)  System.out.println("Archivo Animales.txt no encontrado");
+            return false;
+        }
+        if(animales.isEmpty()){
+            System.out.println("Error: Archivo Animales.txt Vacio");
             return false;
         }
         String resultado = agruparAnimalesPorTipo(animales);

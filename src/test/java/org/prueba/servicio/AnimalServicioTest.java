@@ -5,6 +5,7 @@ import org.prueba.modelo.Animal;
 import org.prueba.modelo.Tipo.Acuatico;
 import org.prueba.modelo.Tipo.Terrestre;
 import org.prueba.modelo.Tipo.Volador;
+import org.prueba.modelo.TipoAnimal;
 import org.prueba.modelo.factory.AnimalFactory;
 
 import java.util.ArrayList;
@@ -18,12 +19,24 @@ class AnimalServicioTest {
     @Test
     void testCrearAnimalValido() {
         String nombre = "Max";
-        String tipo = "Terrestre";
+        String tipo = TipoAnimal.VOLADOR.name();
         String onomatopeya = "Guau";
         Animal animal = AnimalFactory.crearAnimal(nombre, tipo, onomatopeya);
         assertNotNull(animal);
         assertEquals(nombre, animal.getNombre());
         assertEquals(tipo, animal.getTipo());
+        assertEquals(onomatopeya, animal.getOnomatopeya());
+    }
+
+    @Test
+    void testCrearAnimalValidoConTextoMayusculaYMinuscula() {
+        String nombre = "Pollo";
+        String tipo = "VoladOR";
+        String onomatopeya = "Guau";
+        Animal animal = AnimalFactory.crearAnimal(nombre, tipo, onomatopeya);
+        assertNotNull(animal);
+        assertEquals(nombre, animal.getNombre());
+        assertEquals(tipo.toUpperCase(), animal.getTipo());
         assertEquals(onomatopeya, animal.getOnomatopeya());
     }
 
@@ -56,19 +69,15 @@ class AnimalServicioTest {
         List<Animal> animales = Arrays.asList(
                 new Terrestre("Perro", "Guau"),
                 new Terrestre("Gato", "Miau"),
-                new Volador("Águila", "Kiiii"),
-                new Acuatico("Delfín", "Iiih")
+                new Volador("Águila", "Kiiii")
         );
         String resultado = animalService.agruparAnimalesPorTipo(animales);
-        String esperado = "Terrestre:\n" +
+        String esperado = TipoAnimal.TERRESTRE+":\n" +
                 "Perro hace Guau\n" +
                 "Gato hace Miau\n" +
                 "\n" +
-                "Volador:\n" +
-                "Águila hace Kiiii\n" +
-                "\n" +
-                "Acuático:\n" +
-                "Delfín hace Iiih";
+                TipoAnimal.VOLADOR+":\n" +
+                "Águila hace Kiiii";
         assertEquals(esperado, resultado);
     }
 

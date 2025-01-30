@@ -7,12 +7,12 @@ import org.prueba.modelo.Tipo.Volador;
 
 public class AnimalFactory {
     public static Animal crearAnimal(String nombre, String tipo, String onomatopeya) {
-        switch (tipo.toLowerCase()) {
-            case "terrestre":
+        switch (tipo.toUpperCase()) {
+            case "TERRESTRE":
                 return new Terrestre(nombre, onomatopeya);
-            case "volador":
+            case "VOLADOR":
                 return new Volador(nombre, onomatopeya);
-            case "acuatico":
+            case "ACUATICO":
                 return new Acuatico(nombre, onomatopeya);
             default:
                 throw new IllegalArgumentException("Tipo de animal no válido: " + tipo);
